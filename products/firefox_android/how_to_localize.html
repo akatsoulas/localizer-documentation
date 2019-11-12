@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How to localize - Documentation for Mozilla localizers</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../../index.html">Introduction</a></li><li class="expanded "><a href="../../community/index.html"><strong aria-hidden="true">1.</strong> Community</a></li><li><ol class="section"><li class="expanded "><a href="../../community/l10n_community_roles.html"><strong aria-hidden="true">1.1.</strong> Roles</a></li><li class="expanded "><a href="../../community/l10n_feedback.html"><strong aria-hidden="true">1.2.</strong> Giving good feedback</a></li></ol></li><li class="expanded "><a href="../../products/index.html"><strong aria-hidden="true">2.</strong> Products</a></li><li><ol class="section"><li class="expanded "><a href="../../products/firefox_desktop/index.html"><strong aria-hidden="true">2.1.</strong> Firefox for desktop</a></li><li><ol class="section"><li class="expanded "><a href="../../products/firefox_desktop/testing.html"><strong aria-hidden="true">2.1.1.</strong> How to test</a></li></ol></li><li class="expanded "><a href="../../products/firefox_android/index.html"><strong aria-hidden="true">2.2.</strong> Firefox for Android</a></li><li><ol class="section"><li class="expanded "><a href="../../products/firefox_android/how_to_localize.html" class="active"><strong aria-hidden="true">2.2.1.</strong> How to localize</a></li><li class="expanded "><a href="../../products/firefox_android/testing.html"><strong aria-hidden="true">2.2.2.</strong> How to test</a></li></ol></li><li class="expanded "><a href="../../products/firefox_ios/index.html"><strong aria-hidden="true">2.3.</strong> Firefox for iOS</a></li><li><ol class="section"><li class="expanded "><a href="../../products/firefox_ios/adding_new_ios_locale.html"><strong aria-hidden="true">2.3.1.</strong> Adding a new locale</a></li><li class="expanded "><a href="../../products/firefox_ios/testing.html"><strong aria-hidden="true">2.3.2.</strong> How to test</a></li></ol></li><li class="expanded "><a href="../../products/mozilla_org/index.html"><strong aria-hidden="true">2.4.</strong> Mozilla.org</a></li><li><ol class="section"><li class="expanded "><a href="../../products/mozilla_org/testing.html"><strong aria-hidden="true">2.4.1.</strong> How to test</a></li></ol></li><li class="expanded "><a href="../../products/l10n_testing.html"><strong aria-hidden="true">2.5.</strong> Testing localization of Mozilla projects</a></li></ol></li><li class="expanded "><a href="../../index.html"><strong aria-hidden="true">3.</strong> Tools</a></li><li><ol class="section"><li class="expanded "><a href="../../tools/pontoon/index.html"><strong aria-hidden="true">3.1.</strong> Pontoon</a></li><li><ol class="section"><li class="expanded "><a href="../../tools/pontoon/users.html"><strong aria-hidden="true">3.1.1.</strong> User accounts and settings</a></li><li class="expanded "><a href="../../tools/pontoon/teams_projects.html"><strong aria-hidden="true">3.1.2.</strong> Teams and projects</a></li><li class="expanded "><a href="../../tools/pontoon/search_filters.html"><strong aria-hidden="true">3.1.3.</strong> Search and filters</a></li><li class="expanded "><a href="../../tools/pontoon/ui.html"><strong aria-hidden="true">3.1.4.</strong> Translation user interface</a></li><li class="expanded "><a href="../../tools/pontoon/translate.html"><strong aria-hidden="true">3.1.5.</strong> How to translate</a></li><li class="expanded "><a href="../../tools/pontoon/resources.html"><strong aria-hidden="true">3.1.6.</strong> Translation resources</a></li><li class="expanded "><a href="../../tools/pontoon/workflow.html"><strong aria-hidden="true">3.1.7.</strong> Example workflow</a></li></ol></li><li class="expanded "><a href="../../tools/fluent/index.html"><strong aria-hidden="true">3.2.</strong> Fluent</a></li><li><ol class="section"><li class="expanded "><a href="../../tools/fluent/basic_syntax.html"><strong aria-hidden="true">3.2.1.</strong> Fluent syntax</a></li><li class="expanded "><a href="../../tools/fluent/functions.html"><strong aria-hidden="true">3.2.2.</strong> Functions</a></li><li class="expanded "><a href="../../tools/fluent/brand_names.html"><strong aria-hidden="true">3.2.3.</strong> Brand names</a></li></ol></li><li class="expanded "><a href="../../misc/bugzilla_l10n.html"><strong aria-hidden="true">3.3.</strong> Bugzilla for localizers</a></li><li class="expanded "><a href="../../tools/mercurial/index.html"><strong aria-hidden="true">3.4.</strong> Mercurial tips</a></li><li><ol class="section"><li class="expanded "><a href="../../tools/mercurial/tracking_back_string_to_bug.html"><strong aria-hidden="true">3.4.1.</strong> Using annotate</a></li></ol></li></ol></li><li class="expanded "><a href="../../webprojects/index.html"><strong aria-hidden="true">4.</strong> Web projects</a></li><li><ol class="section"><li class="expanded "><a href="../../webprojects/amo.html"><strong aria-hidden="true">4.1.</strong> Addons.mozilla.org</a></li><li class="expanded "><a href="../../webprojects/mdn.html"><strong aria-hidden="true">4.2.</strong> Developer.mozilla.org (MDN)</a></li><li class="expanded "><a href="../../webprojects/fundraising.html"><strong aria-hidden="true">4.3.</strong> Mozilla Donate website</a></li><li class="expanded "><a href="../../webprojects/snippets.html"><strong aria-hidden="true">4.4.</strong> Snippets</a></li><li class="expanded "><a href="../../webprojects/sumo.html"><strong aria-hidden="true">4.5.</strong> Support.mozilla.org (SUMO)</a></li></ol></li><li class="expanded "><a href="../../misc/glossary.html">Glossary</a></li><li class="expanded affix "><a href="../../misc/l10n_resources.html">l10n resources</a></li><li class="expanded affix "><a href="../../misc/community-marketing-kit.html">Community marketing kit</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Documentation for Mozilla localizers</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#firefox-for-android---how-to-localize" id="firefox-for-android---how-to-localize">Firefox for Android - How to localize</a></h1>
+<p>The release cycle for Firefox for Android is the same as Firefox for Desktop, which is generally 6 weeks - but can sometimes be 8 weeks.</p>
+<p>You can see the <a href="https://wiki.mozilla.org/RapidRelease/Calendar">detailed schedule for each release here</a>.</p>
+<p><em>Merge day</em> is when localizations move to the next train - and the last day available to include localization updates to the next Beta version if you work on tools like Pontoon.</p>
+<p>Note: please make sure that you’ve already localized mozilla.org before you start working on Firefox for Android or any other projects.</p>
+<h2><a class="header" href="#the-importance-of-regularly-checking-your-dashboard" id="the-importance-of-regularly-checking-your-dashboard">The importance of regularly checking your dashboard</a></h2>
+<h3><a class="header" href="#checking-for-errors-and-warnings" id="checking-for-errors-and-warnings">Checking for errors and warnings</a></h3>
+<p>Please keep in mind during your entire localization process to regularly check <a href="https://l10n.mozilla.org/teams/">your locale’s team page</a>. You can just choose your locale from the list there, and bookmark it to easily access it in the future.</p>
+<p>Once you are on your team page, under the section <em>Application &amp; Sign-offs</em>, take a look at the <em>Translation Status</em> column. If you have any <strong>errors</strong>, they will show up in red there, while <strong>warnings</strong> will be displayed in orange. The number of missing strings will also appear in that same column. You can click on either of these links to see what’s going on behind these notifications.</p>
+<p>If you notice any errors, they need to be fixed very quickly. This is extremely important because if you break something while your locale is shipping on multi-locale builds (so, the builds that actually ship on the Play Store), you will need to fix it as soon as possible since it breaks the build for everyone!</p>
+<p>Checking your team page and dashboard regularly should be something you do from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale’s health and status, and overall ensures you’re shipping a good quality localization.</p>
+<h2><a class="header" href="#localize-the-firefox-for-android-folder" id="localize-the-firefox-for-android-folder">Localize the Firefox for Android folder</a></h2>
+<ul>
+<li><a href="https://pontoon.mozilla.org/projects/firefox-for-android/">Pontoon</a>: choose your locale code from there.</li>
+</ul>
+<p>Once you’ve finished covering this folder, please note you still have strings to translate. See below for more instructions.</p>
+<h2><a class="header" href="#localize-the-shared-firefox-strings" id="localize-the-shared-firefox-strings">Localize the shared Firefox strings</a></h2>
+<p>In order to reach 100% completion on the Firefox for Android l10n project, you will have to localize the shared Firefox files (so, the ones common to Firefox Desktop and Android) as well. These are found in the Firefox folder:</p>
+<ul>
+<li><a href="https://pontoon.mozilla.org/projects/firefox/">Pontoon</a>: choose your locale code from there. Localize all file paths that start with dom, netwerk, security, services and toolkit.</li>
+</ul>
+<p>Once you’ve reached 100% completion for the shared strings: let the Fennec project manager know (currently <strong>delphine</strong> at <strong>mozilla</strong> dot <strong>com</strong>). A bug will be filed to add your locale to the single-locale builds.</p>
+<p>These builds are available here: https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-16-l10n/.
+This means that you will be able to download a build on your Android device to test your locale. Please note that at this point, your locale still isn’t shipping on official Firefox for Android builds. That will come later.</p>
+<h2><a class="header" href="#considerations-for-brand-new-locales-that-have-no-desktop-version-yet" id="considerations-for-brand-new-locales-that-have-no-desktop-version-yet">Considerations for brand new locales that have no Desktop version yet</a></h2>
+<p>If you have not already launched Firefox Desktop in your language, then you are probably missing some important pieces, such as search engines.</p>
+<p>Bugs will need to be filed by l10n-drivers, and done by following filing out the form here: https://l10n.mozilla.org/bugs/new-locale</p>
+<p>Please read this <a href="https://github.com/mozilla-l10n/documentation/blob/master/src/products/searchplugins/setup_searchplugins.md">document</a> for more details on how to add search plugins.</p>
+<p>Once you have finished localization work on Android and your locale is up on single-locale builds, you may now move to <a href="testing.html">the testing phase</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../products/firefox_android/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../products/firefox_android/testing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../products/firefox_android/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../products/firefox_android/testing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
